@@ -1,54 +1,81 @@
 // Values to compare
-const num = 0;      // Falsy (number 0)
-const str = "";      // Falsy (empty string)
-const obj = {};      // Truthy (empty object)
-const arr = [];      // Truthy (empty array)
-const boolTrue = true; // Truthy (boolean true)
-const boolFalse = false; // Falsy (boolean false)
-const nullValue = null;  // Falsy (null)
-const undefinedValue = undefined; // Falsy (undefined)
+const num = 0;
+const str = "";
+const obj = {};
+const arr = [];
+const boolTrue = true;
+const boolFalse = false;
+const nullValue = null;
+const undefinedValue = undefined;
 
-// Equality (==)
-if (num == false) {
-    console.log("num is falsy (coercion)"); // This gets logged
+// TODO: Implement equality check (==)
+function checkEquality() {
+    // TODO: Compare num with false using ==
+    if (num == false) {
+        return "num is falsy (coercion)";
+    }
+    return "num is not falsy (coercion)";
 }
 
-// Strict Equality (===)
-if (num === 0) {
-    console.log("num is strictly equal to 0"); // This gets logged
+// TODO: Implement strict equality check (===)
+function checkStrictEquality() {
+    // TODO: Compare num with 0 using ===
+    if (num === 0) {
+        return "num is strictly equal to 0";
+    }
+    return "num is not strictly equal to 0";
 }
 
-// Inequality (!=)
-if (str != "") {
-    console.log("str is not empty (coercion)");
-} else {
-    console.log("str is falsy (coercion)"); // This gets logged
+// TODO: Implement inequality check (!=)
+function checkInequality() {
+    // TODO: Compare str with "" using !=
+    if (str != "") {
+        return "str is not empty (coercion)";
+    }
+    return "str is falsy (coercion)";
 }
 
-// Strict Inequality (!==)
-if (obj !== null) {
-    console.log("obj is not null"); // This gets logged
+// TODO: Implement strict inequality check (!==)
+function checkStrictInequality() {
+    // TODO: Compare obj with null using !==
+    if (obj !== null) {
+        return "obj is not null";
+    }
+    return "obj is null";
 }
 
-// Logical AND (&&) 
-if (arr.length > 0 && obj) {
-    console.log("Both array and object are truthy");
-} else {
-    console.log("At least one is falsy"); // This gets logged
+// TODO: Implement logical AND (&&) check
+function checkLogicalAND() {
+    // TODO: Check if arr.length > 0 and obj is truthy
+    if (arr.length > 0 && obj) {
+        return "Both array and object are truthy";
+    }
+    return "At least one is falsy";
 }
 
-// Logical OR (||)
-if (boolTrue || boolFalse) {
-    console.log("At least one boolean is true"); // This gets logged
+// TODO: Implement logical OR (||) check
+function checkLogicalOR() {
+    // TODO: Check if either boolTrue or boolFalse is true
+    if (boolTrue || boolFalse) {
+        return "At least one boolean is true";
+    }
+    return "Both booleans are false";
 }
 
-// Combining with Truthy/Falsy Checks
-if (nullValue) {
-    console.log("nullValue is truthy"); 
-} else {
-    console.log("nullValue is falsy"); // This gets logged
+// TODO: Implement truthy/falsy check for null
+function checkNullTruthiness() {
+    // TODO: Check if nullValue is truthy
+    if (nullValue) {
+        return "nullValue is truthy";
+    }
+    return "nullValue is falsy";
 }
 
-if (!undefinedValue) {
-    console.log("undefinedValue is falsy (negation)"); // This gets logged
+// TODO: Implement truthy/falsy check for undefined with negation
+function checkUndefinedTruthiness() {
+    // TODO: Check if undefinedValue is falsy using negation
+    if (!undefinedValue) {
+        return "undefinedValue is falsy (negation)";
+    }
+    return "undefinedValue is truthy";
 }
