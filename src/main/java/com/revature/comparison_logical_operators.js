@@ -61,53 +61,54 @@ function checkLogicalOR() {
 
 // TODO: Implement truthy/falsy check for null
 function checkNullTruthiness() {
-    // TODO: Check if nullValue is truthy
-    if (nullValue) {
-        return "nullValue is truthy";
-    }
-    return "nullValue is falsy";
+  // TODO: Check if nullUndef is truthy
+  if (nullUndef) {
+    return "nullUndef is truthy";
+  }
+  return "nullUndef is falsy";
 }
 
 // TODO: Implement truthy/falsy check for undefined with negation
 function checkUndefinedTruthiness() {
-    // TODO: Check if undefinedValue is falsy using negation
-    if (!undefinedValue) {
-        return "undefinedValue is falsy (negation)";
-    }
-    return "undefinedValue is truthy";
+  // TODO: Check if nullUndef is falsy using negation
+  if (!nullUndef) {
+    return "nullUndef is falsy (negation)";
+  }
+  return "nullUndef is truthy";
 }
 
 document.getElementById('equalityForm').addEventListener('submit', function(event) {
-    event.preventDefault();
-    
-    num = parseFloat(document.getElementById('number').value);
-    str = document.getElementById('string').value;
-    obj = document.getElementById('object').value === 'empty' ? {} : {key: 'value'};
-    arr = document.getElementById('array').value === 'empty' ? [] : [1];
-    boolValue = document.getElementById('boolean').value === 'true';
-    nullUndef = document.getElementById('nullUndefined').value === 'null' ? null : undefined;
+  event.preventDefault();
 
-    const results = [
-        `num == false: ${num == false}`,
-        `num === 0: ${num === 0}`,
-        `str != "": ${str != ""}`,
-        `obj !== null: ${obj !== null}`,
-        `arr.length > 0 && obj: ${arr.length > 0 && obj.key}`,
-        `bool || !bool: ${boolValue || !boolValue}`,
-        `!!num: ${!!num}`,
-        `!!str: ${!!str}`,
-        `!!obj: ${!!obj}`,
-        `!!arr: ${!!arr}`,
-        `!!bool: ${!!boolValue}`,
-        `!!nullUndef: ${!!nullUndef}`,
-        `Equality check: ${checkEquality()}`,
-        `Strict equality check: ${checkStrictEquality()}`,
-        `Inequality check: ${checkInequality()}`,
-        `Strict inequality check: ${checkStrictInequality()}`,
-        `Logical AND check: ${checkLogicalAND()}`,
-        `Logical OR check: ${checkLogicalOR()}`,
-        `Null/Undefined truthiness check: ${checkNullUndefinedTruthiness()}`
-    ];
+  num = parseFloat(document.getElementById('number').value);
+  str = document.getElementById('string').value;
+  obj = document.getElementById('object').value === 'empty' ? {} : {key: 'value'};
+  arr = document.getElementById('array').value === 'empty' ? [] : [1];
+  boolValue = document.getElementById('boolean').value === 'true';
+  nullUndef = document.getElementById('nullUndefined').value === 'null' ? null : undefined;
 
-    document.getElementById('results').innerHTML = results.join('<br>');
+  const results = [
+    `num == false: ${num == false}`,
+    `num === 0: ${num === 0}`,
+    `str != "": ${str != ""}`,
+    `obj !== null: ${obj !== null}`,
+    `arr.length > 0 && obj: ${arr.length > 0 && obj}`,
+    `bool || !bool: ${boolValue || !boolValue}`,
+    `!!num: ${!!num}`,
+    `!!str: ${!!str}`,
+    `!!obj: ${!!obj}`,
+    `!!arr: ${!!arr}`,
+    `!!bool: ${!!boolValue}`,
+    `!!nullUndef: ${!!nullUndef}`,
+    `Equality check: ${checkEquality()}`,
+    `Strict equality check: ${checkStrictEquality()}`,
+    `Inequality check: ${checkInequality()}`,
+    `Strict inequality check: ${checkStrictInequality()}`,
+    `Logical AND check: ${checkLogicalAND()}`,
+    `Logical OR check: ${checkLogicalOR()}`,
+    `Null truthiness check: ${checkNullTruthiness()}`,
+    `Undefined truthiness check: ${checkUndefinedTruthiness()}`
+  ];
+
+  document.getElementById('results').innerHTML = results.join('<br>');
 });
