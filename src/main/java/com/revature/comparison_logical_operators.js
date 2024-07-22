@@ -1,12 +1,9 @@
-// Values to compare
-const num = 0;
-const str = "";
-const obj = {};
-const arr = [];
-const boolTrue = true;
-const boolFalse = false;
-const nullValue = null;
-const undefinedValue = undefined;
+let num = 0;
+let str = "";
+let obj = {};
+let arr = [];
+let boolValue = true;
+let nullUndef = null;
 
 // TODO: Implement equality check (==)
 function checkEquality() {
@@ -79,3 +76,38 @@ function checkUndefinedTruthiness() {
     }
     return "undefinedValue is truthy";
 }
+
+document.getElementById('equalityForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    
+    num = parseFloat(document.getElementById('number').value);
+    str = document.getElementById('string').value;
+    obj = document.getElementById('object').value === 'empty' ? {} : {key: 'value'};
+    arr = document.getElementById('array').value === 'empty' ? [] : [1];
+    boolValue = document.getElementById('boolean').value === 'true';
+    nullUndef = document.getElementById('nullUndefined').value === 'null' ? null : undefined;
+
+    const results = [
+        `num == false: ${num == false}`,
+        `num === 0: ${num === 0}`,
+        `str != "": ${str != ""}`,
+        `obj !== null: ${obj !== null}`,
+        `arr.length > 0 && obj: ${arr.length > 0 && obj.key}`,
+        `bool || !bool: ${boolValue || !boolValue}`,
+        `!!num: ${!!num}`,
+        `!!str: ${!!str}`,
+        `!!obj: ${!!obj}`,
+        `!!arr: ${!!arr}`,
+        `!!bool: ${!!boolValue}`,
+        `!!nullUndef: ${!!nullUndef}`,
+        `Equality check: ${checkEquality()}`,
+        `Strict equality check: ${checkStrictEquality()}`,
+        `Inequality check: ${checkInequality()}`,
+        `Strict inequality check: ${checkStrictInequality()}`,
+        `Logical AND check: ${checkLogicalAND()}`,
+        `Logical OR check: ${checkLogicalOR()}`,
+        `Null/Undefined truthiness check: ${checkNullUndefinedTruthiness()}`
+    ];
+
+    document.getElementById('results').innerHTML = results.join('<br>');
+});
