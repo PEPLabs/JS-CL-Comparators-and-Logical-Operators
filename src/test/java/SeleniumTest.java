@@ -22,12 +22,11 @@ public class SeleniumTest {
         System.setProperty("webdriver.chrome.driver", "driver/chromedriver");//linux_64
        
         // Get file
-        File file = new File("src/main/java/com/revature/comparison_logical_operators.js");
+        File file = new File("src/main/java/com/revature/index.html");
         path = "file://" + file.getAbsolutePath();
 
         // Create a new ChromeDriver instance
         ChromeOptions options = new ChromeOptions();
-        
         options.addArguments("headless");
         webDriver = new ChromeDriver(options);
         
