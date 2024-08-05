@@ -5,77 +5,86 @@ let arr = [];
 let boolValue = true;
 let nullUndef = null;
 
-// TODO: Implement equality check (==)
+
+
+/* Implement equality check (==)
+   TODO: Write an if statement that compares num with false using == 
+   If true, return "num is falsy (coercion)"
+   Otherwise, return "num is not falsy (coercion)"
+*/
 function checkEquality() {
-  // TODO: Compare num with false using ==
-  if (num == false) {
-    return "num is falsy (coercion)";
-  }
-  return "num is not falsy (coercion)";
+  
+  
 }
 
-// TODO: Implement strict equality check (===)
+/* Implement strict equality check (===)
+   TODO: Write an if statement that compares num with 0 using ===
+   If true, return "num is strictly equal to 0"
+   Otherwise, return "num is not strictly equal to 0"
+*/
 function checkStrictEquality() {
-  // TODO: Compare num with 0 using ===
-  if (num === 0) {
-    return "num is strictly equal to 0";
-  }
-  return "num is not strictly equal to 0";
+  
 }
 
-// TODO: Implement inequality check (!=)
+/* Implement inequality check (!=)
+   TODO: Write an if statement that compares str with "" using !=
+   If true, return "str is not empty (coercion)"
+   Otherwise, return "str is falsy (coercion)"
+*/
 function checkInequality() {
-  // TODO: Compare str with "" using !=
-  if (str != "") {
-    return "str is not empty (coercion)";
-  }
-  return "str is falsy (coercion)";
+ 
 }
 
-// TODO: Implement strict inequality check (!==)
+/* Implement strict inequality check (!==)
+   TODO: Write an if statement that compares obj with null using !==
+   If true, return "obj is not null"
+   Otherwise, return "obj is null"
+*/
 function checkStrictInequality() {
-  // TODO: Compare obj with null using !==
-  if (obj !== null) {
-    return "obj is not null";
-  }
-  return "obj is null";
+ 
 }
 
-// TODO: Implement logical AND (&&) check
+/* Implement logical AND (&&) check
+   TODO: Write an if statement that checks if arr.length > 0 AND obj is truthy
+   If true, return "Both array and object are truthy"
+   Otherwise, return "At least one is falsy"
+*/
 function checkLogicalAND() {
-  // TODO: Check if arr.length > 0 and obj is truthy
-  if (arr.length > 0 && obj) {
-    return "Both array and object are truthy";
-  }
-  return "At least one is falsy";
+  
 }
 
-// TODO: Implement logical OR (||) check
+/* Implement logical OR (||) check
+   TODO: Write an if statement that checks if boolValue is true OR !boolValue is true
+   If true, return "At least one boolean is true"
+   Otherwise, return "Both booleans are false"
+*/
 function checkLogicalOR() {
-  // TODO: Check if either boolValue is true or false
-  if (boolValue || !boolValue) {
-    return "At least one boolean is true";
-  }
-  return "Both booleans are false";
+ 
 }
 
-// TODO: Implement truthy/falsy check for null
+/* Implement truthy/falsy check for null
+   TODO: Write an if statement that checks if nullUndef is truthy
+   If true, return "nullUndef is truthy"
+   Otherwise, return "nullUndef is falsy"
+*/
 function checkNullTruthiness() {
-  // TODO: Check if nullUndef is truthy
-  if (nullUndef) {
-    return "nullUndef is truthy";
-  }
-  return "nullUndef is falsy";
+  
 }
 
-// TODO: Implement truthy/falsy check for undefined with negation
+/* Implement truthy/falsy check for undefined with negation
+   TODO: Write an if statement that checks if !nullUndef is true (i.e., nullUndef is falsy)
+   If true, return "nullUndef is falsy (negation)"
+   Otherwise, return "nullUndef is truthy"
+*/
 function checkUndefinedTruthiness() {
-  // TODO: Check if nullUndef is falsy using negation
-  if (!nullUndef) {
-    return "nullUndef is falsy (negation)";
-  }
-  return "nullUndef is truthy";
+ 
 }
+
+
+
+
+              /* DO NOT TOUCH THE BELOW CODE */
+
 
 document.getElementById('equalityForm').addEventListener('submit', function(event) {
   event.preventDefault();
