@@ -1,54 +1,123 @@
-// Values to compare
-const num = 0;      // Falsy (number 0)
-const str = "";      // Falsy (empty string)
-const obj = {};      // Truthy (empty object)
-const arr = [];      // Truthy (empty array)
-const boolTrue = true; // Truthy (boolean true)
-const boolFalse = false; // Falsy (boolean false)
-const nullValue = null;  // Falsy (null)
-const undefinedValue = undefined; // Falsy (undefined)
+let num = 0;
+let str = "";
+let obj = {};
+let arr = [];
+let boolValue = true;
+let nullUndef = null;
 
-// Equality (==)
-if (num == false) {
-    console.log("num is falsy (coercion)"); // This gets logged
+
+
+/* Implement equality check (==)
+   TODO: Write an if statement that compares num with false using == 
+   If true, return "num is falsy (coercion)"
+   Otherwise, return "num is not falsy (coercion)"
+*/
+function checkEquality() {
+  
+  
 }
 
-// Strict Equality (===)
-if (num === 0) {
-    console.log("num is strictly equal to 0"); // This gets logged
+/* Implement strict equality check (===)
+   TODO: Write an if statement that compares num with 0 using ===
+   If true, return "num is strictly equal to 0"
+   Otherwise, return "num is not strictly equal to 0"
+*/
+function checkStrictEquality() {
+  
 }
 
-// Inequality (!=)
-if (str != "") {
-    console.log("str is not empty (coercion)");
-} else {
-    console.log("str is falsy (coercion)"); // This gets logged
+/* Implement inequality check (!=)
+   TODO: Write an if statement that compares str with "" using !=
+   If true, return "str is not empty (coercion)"
+   Otherwise, return "str is falsy (coercion)"
+*/
+function checkInequality() {
+ 
 }
 
-// Strict Inequality (!==)
-if (obj !== null) {
-    console.log("obj is not null"); // This gets logged
+/* Implement strict inequality check (!==)
+   TODO: Write an if statement that compares obj with null using !==
+   If true, return "obj is not null"
+   Otherwise, return "obj is null"
+*/
+function checkStrictInequality() {
+ 
 }
 
-// Logical AND (&&) 
-if (arr.length > 0 && obj) {
-    console.log("Both array and object are truthy");
-} else {
-    console.log("At least one is falsy"); // This gets logged
+/* Implement logical AND (&&) check
+   TODO: Write an if statement that checks if arr.length > 0 AND obj is truthy
+   If true, return "Both array and object are truthy"
+   Otherwise, return "At least one is falsy"
+*/
+function checkLogicalAND() {
+  
 }
 
-// Logical OR (||)
-if (boolTrue || boolFalse) {
-    console.log("At least one boolean is true"); // This gets logged
+/* Implement logical OR (||) check
+   TODO: Write an if statement that checks if boolValue is true OR !boolValue is true
+   If true, return "At least one boolean is true"
+   Otherwise, return "Both booleans are false"
+*/
+function checkLogicalOR() {
+ 
 }
 
-// Combining with Truthy/Falsy Checks
-if (nullValue) {
-    console.log("nullValue is truthy"); 
-} else {
-    console.log("nullValue is falsy"); // This gets logged
+/* Implement truthy/falsy check for null
+   TODO: Write an if statement that checks if nullUndef is truthy
+   If true, return "nullUndef is truthy"
+   Otherwise, return "nullUndef is falsy"
+*/
+function checkNullTruthiness() {
+  
 }
 
-if (!undefinedValue) {
-    console.log("undefinedValue is falsy (negation)"); // This gets logged
+/* Implement truthy/falsy check for undefined with negation
+   TODO: Write an if statement that checks if !nullUndef is true (i.e., nullUndef is falsy)
+   If true, return "nullUndef is falsy (negation)"
+   Otherwise, return "nullUndef is truthy"
+*/
+function checkUndefinedTruthiness() {
+ 
 }
+
+
+
+
+              /* DO NOT TOUCH THE BELOW CODE */
+
+
+document.getElementById('equalityForm').addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  num = parseFloat(document.getElementById('number').value);
+  str = document.getElementById('string').value;
+  obj = document.getElementById('object').value === 'empty' ? {} : {key: 'value'};
+  arr = document.getElementById('array').value === 'empty' ? [] : [1];
+  boolValue = document.getElementById('boolean').value === 'true';
+  nullUndef = document.getElementById('nullUndefined').value === 'null' ? null : undefined;
+
+  const results = [
+    `num == false: ${num == false}`,
+    `num === 0: ${num === 0}`,
+    `str != "": ${str != ""}`,
+    `obj !== null: ${obj !== null}`,
+    `arr.length > 0 && obj: ${arr.length > 0 && obj}`,
+    `bool || !bool: ${boolValue || !boolValue}`,
+    `!!num: ${!!num}`,
+    `!!str: ${!!str}`,
+    `!!obj: ${!!obj}`,
+    `!!arr: ${!!arr}`,
+    `!!bool: ${!!boolValue}`,
+    `!!nullUndef: ${!!nullUndef}`,
+    `Equality check: ${checkEquality()}`,
+    `Strict equality check: ${checkStrictEquality()}`,
+    `Inequality check: ${checkInequality()}`,
+    `Strict inequality check: ${checkStrictInequality()}`,
+    `Logical AND check: ${checkLogicalAND()}`,
+    `Logical OR check: ${checkLogicalOR()}`,
+    `Null truthiness check: ${checkNullTruthiness()}`,
+    `Undefined truthiness check: ${checkUndefinedTruthiness()}`
+  ];
+
+  document.getElementById('results').innerHTML = results.join('<br>');
+});
