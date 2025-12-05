@@ -1,0 +1,50 @@
+{
+  "type": "java",
+  "testFiles": [
+    {
+      "path": "src/test/java/SeleniumTest.java",
+      "testCases": [
+        {
+          "methodName": "testEqualityCheck",
+          "label": "Loose Equality (==) Check",
+          "description": "Verifies that the equality operator (==) correctly handles type coercion, specifically testing if a numerical zero (0) is considered loosely equal (falsy) to other falsy types."
+        },
+        {
+          "methodName": "testStrictEqualityCheck",
+          "label": "Strict Equality (===) Check",
+          "description": "Verifies that the strict equality operator (===) correctly confirms that the data type and value match exactly, specifically ensuring a numeric variable is strictly equal to the number 0."
+        },
+        {
+          "methodName": "testInequalityCheck",
+          "label": "Loose Inequality (!=) Check",
+          "description": "Verifies that the inequality operator (!=) correctly handles type coercion, specifically testing if an empty string (\"\") is considered loosely unequal (falsy) to other types."
+        },
+        {
+          "methodName": "testStrictInequalityCheck",
+          "label": "Strict Inequality (!==) Check",
+          "description": "Verifies that the strict inequality operator (!==) correctly confirms when data type or value do not match, ensuring a variable is strictly not equal to a specific value like `null`."
+        },
+        {
+          "methodName": "testLogicalANDCheck",
+          "label": "Logical AND (&&) Evaluation",
+          "description": "Verifies that the logical AND operator (&&) returns a falsy result when one or more of the input values are falsy, demonstrating short-circuit evaluation."
+        },
+        {
+          "methodName": "testLogicalORCheck",
+          "label": "Logical OR (||) Evaluation",
+          "description": "Verifies that the logical OR operator (||) correctly returns a truthy result when at least one of the input values is truthy."
+        },
+        {
+          "methodName": "testNullTruthinessCheck",
+          "label": "Null Truthiness Check",
+          "description": "Verifies that the null value (`null`) is correctly evaluated as a falsy value within a boolean context."
+        },
+        {
+          "methodName": "testUndefinedTruthinessCheck",
+          "label": "Undefined Truthiness Check",
+          "description": "Verifies that the undefined value (`undefined`) is correctly evaluated as a falsy value when used in a boolean context or with negation."
+        }
+      ]
+    }
+  ]
+}
